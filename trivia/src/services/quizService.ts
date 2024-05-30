@@ -1,4 +1,5 @@
 import axios from 'axios';
+import he from 'he';
 
 const API_URL = import.meta.env.VITE_QUIZ_API_URL;
 
@@ -11,10 +12,15 @@ export const fetchQuestions = async (amount = 10, difficulty = 'easy') => {
     const response = await axios.get(API_URL, {
       params: {
         amount,
-        difficulty
+        difficulty,
       },
     });
-    return response.data.results;
+    return response.data.results.map((question: any) => ({
+      ...question,
+      question: he.decode(question.question),
+      correct_answer: he.decode(question.correct_answer),
+      incorrect_answers: question.incorrect_answers.map((answer: string) => he.decode(answer))
+    }));
   } catch (error) {
     console.error('Error fetching questions:', error);
     throw error;
