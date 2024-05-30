@@ -18,7 +18,6 @@ export interface QuizState {
   error: string | null;
 }
 
-// Serialization function
 export function serializeQuestions(rawQuestions: any[]): Question[] {
   return rawQuestions.map(({ category, type, difficulty, question, correct_answer, incorrect_answers }) => ({
     category,

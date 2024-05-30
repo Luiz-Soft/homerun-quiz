@@ -39,7 +39,6 @@ export default defineComponent({
     })
 
     const confirmAnswer = (userAnswer: boolean) => {
-      console.log(userAnswer)
       quizStore.stopTimer()
       quizStore.contabilizeUserScore(userAnswer)
     }
@@ -56,7 +55,6 @@ export default defineComponent({
       quizStore.currentQuestionIndex = 0
       quizStore.score = 0
       quizStore.isGameFinished = false
-      quizStore.resetTimer(quizStore.timeLimit.value)
       router.push({ name: 'start' })
     }
     watch(isGameFinished, (newValue) => {

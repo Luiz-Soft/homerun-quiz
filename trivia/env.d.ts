@@ -2,7 +2,6 @@
 
 interface ImportMetaEnv {
     readonly VITE_APP_QUIZ_API_URL: string;
-    // Add other environment variables here
   }
   
   interface ImportMeta {
