@@ -23,13 +23,33 @@ const score = computed(() => quizStore.score)
 <style scoped>
 .status-bar {
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #ddd;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em;
+  background-color: #282c34;
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1em auto;
 }
 
 .status-bar p {
-  margin: 0;
+  margin: 0.5em 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1em;
+}
+
+@media (max-width: 480px) {
+  .status-bar {
+    padding: 0.5em;
+  }
+
+  .status-bar p {
+    font-size: 0.9em;
+    margin: 0.3em 0;
+  }
 }
 </style>

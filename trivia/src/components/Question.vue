@@ -101,15 +101,71 @@ export default defineComponent({
 
 <style scoped>
 .question-container {
-  /* Add your styles here */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  background: linear-gradient(135deg, #e2e2e2, #c3cfe2);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto 1em auto;
 }
-.question-container {
-  /* Add your styles here */
+
+h2 {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  font-size: 1.1em;
+}
+
+input[type='radio'] {
+  margin-right: 0.5em;
+}
+
+button {
+  padding: 0.7em;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 1em;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:enabled {
+  background-color: #0056b3;
 }
 
 .blank {
-  background-color: blue;
-  color: white;
+  color: #333;
 }
 
 .correct {
@@ -120,5 +176,24 @@ export default defineComponent({
 .incorrect {
   background-color: red;
   color: white;
+}
+
+@media (max-width: 480px) {
+  .question-container {
+    padding: 1em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  label {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 0.5em;
+  }
 }
 </style>
